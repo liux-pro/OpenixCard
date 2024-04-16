@@ -25,5 +25,5 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         tag_name: master
-        body: wget https://github.com/liux-pro/OpenixCard/releases/download/master/OpenixCard && chmod +x OpenixCard && sudo mv OpenixCard /usr/local/bin/
+        body_path: ${{github.workspace}}/USAGE.md
         files: ${{github.workspace}}/OpenixCard
