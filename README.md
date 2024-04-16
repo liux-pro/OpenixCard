@@ -7,14 +7,15 @@
 
 # 使用方法
 ```
-TODO
+wget https://github.com/liux-pro/OpenixCard/releases/download/master/OpenixCard && chmod +x OpenixCard && sudo mv OpenixCard /usr/local/bin/
+OpenixCard -d xxx.img
 ```
 
 # 编译过程中遇到的问题
 ## gcc版本过低
 ubuntu18的gcc为7，从自带的软件源中可升级到8，这就几乎够了。
 ## 链接到库
-好像是在gcc8中这个库还有点实验性质，有被默认链接，需要手动链接  
+好像是在gcc8中这个库还有点实验性质，没有被默认链接，需要手动链接  
 ```
 target_link_libraries(OpenixCard PRIVATE stdc++fs)
 ```
