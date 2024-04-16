@@ -7,7 +7,11 @@
 
 # 使用方法
 ```
-wget https://github.com/liux-pro/OpenixCard/releases/download/master/OpenixCard && chmod +x OpenixCard && sudo mv OpenixCard /usr/local/bin/
+# 下载，给运行权限，放到 PATH
+wget https://github.com/liux-pro/OpenixCard/releases/download/master/OpenixCard
+chmod +x OpenixCard
+sudo mv OpenixCard /usr/local/bin/
+
 OpenixCard -d xxx.img
 ```
 
