@@ -1,0 +1,27 @@
+name: build
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - uses: actions/checkout@v3
+    
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile -t openixcard
+      
+    - name: extract OpenixCard from docker image
+      run: docker create --name=openixcard openixcard && docker cp openixcard:/app/build/dist/OpenixCard .
+      
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ${{github.workspace}}/OpenixCard
